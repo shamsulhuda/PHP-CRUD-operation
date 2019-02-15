@@ -8,34 +8,35 @@ include "inc/header.php";
 
 if(isset($_POST) & !empty($_POST))
 {
+// 	retrive data from form
     $fname = mysqli_real_escape_string($connection, $_POST['fname']);
     $lname = mysqli_real_escape_string($connection, $_POST['lname']);
     $email = mysqli_real_escape_string($connection, $_POST['email']);
     $gender = $_POST['gender'];
     $age = $_POST['age'];
 
-
+// Query operation
     $insertSql = "INSERT INTO `crud` (first_name, last_name, email_id, gender, age) VALUES ('$fname', '$lname', '$email', '$gender', '$age')";
 
-		$res = mysqli_query($connection, $insertSql) or die(mysqli_error($connection));
-		
+    $res = mysqli_query($connection, $insertSql) or die(mysqli_error($connection)); //Apply query function
+// 	Show insertion status as message	
     if($res){
-			$smsg = "Successfully inserted data, Insert New data.";
-		}else{
-			$fmsg = "Data not inserted, please try again later.";
-		}
+	$smsg = "Successfully inserted data, Insert New data.";
+    }else{
+	$fmsg = "Data not inserted, please try again later.";
+    }
 }
 ?>
 
 
 <div class="container">
 	<?php
+// 	showing message here
 	if(isset($smsg)){ ?>
 		<div class="alert alert-success" role="alert"> <?php echo $smsg; ?> </div>
 		<?php 
 		} 
 		?>
-
 
 	<?php
 	if(isset($fmsg)){ ?>
