@@ -50,7 +50,7 @@ if(isset($_POST) & !empty($_POST))
 						<form method="post" class="form-horizontal col-md-6 col-md-offset-3">
 				<h2 class="text-center">Create user</h2>
 					<div class="form-group">
-							<label for="input1" class="control-label">First Name</label>
+							<label for="input1" class="control-label">First name</label>
 							<div class="">
 								<input type="text" name="fname"  class="form-control" id="input1" placeholder="First Name" />
 							</div>
@@ -71,7 +71,7 @@ if(isset($_POST) & !empty($_POST))
 					</div>
 		
 					<div class="form-group" class="radio">
-					<label for="input1" class="control-label">Gender</label>
+					<label for="input1" class="control-label">Select Gender</label>
 					<div class="">
 						<label>
 							<input type="radio" name="gender" id="optionsRadios1" value="male" checked> Male
